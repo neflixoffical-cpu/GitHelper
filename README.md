@@ -215,7 +215,7 @@ GitHelper.exe C:\Projects\my-app
 ## 🔧 Сборка из исходников
 
 ```powershell
-git clone https://github.com/<твой-ник>/GitHelper.git
+git clone https://github.com/neflixoffical-cpu/GitHelper.git
 cd GitHelper
 cargo build --release
 # готовый файл: target\release\githelper.exe
