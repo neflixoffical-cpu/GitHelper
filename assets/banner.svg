@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="GitHelper — Git и GitHub без боли">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050913"/>
+      <stop offset="0.55" stop-color="#081230"/>
+      <stop offset="1" stop-color="#040812"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.48" r="0.5">
+      <stop offset="0" stop-color="#3b78ff" stop-opacity="0.38"/>
+      <stop offset="0.6" stop-color="#0037da" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0037da"/>
+      <stop offset="0.45" stop-color="#3b78ff"/>
+      <stop offset="1" stop-color="#61d6ff"/>
+    </linearGradient>
+    <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="-260" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1500 0;1500 0" keyTimes="0;0.55;1" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0037da" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#3b78ff"/>
+      <stop offset="0.7" stop-color="#61d6ff"/>
+      <stop offset="1" stop-color="#61d6ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1c2c56" stroke-opacity="0.35" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <style>
+      .mono { font-family: 'Cascadia Code','JetBrains Mono',Consolas,'DejaVu Sans Mono',monospace; }
+      .t { font-family: 'Segoe UI','Inter',system-ui,-apple-system,sans-serif; }
+      .fade { animation: fade 1.4s ease-out both; }
+      .fade2 { animation: fade 1.4s 0.5s ease-out both; }
+      .fade3 { animation: fade 1.4s 0.9s ease-out both; }
+      @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+      .pulse { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes pulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.35); } }
+      .d1 { animation-delay: .3s } .d2 { animation-delay: .6s } .d3 { animation-delay: .9s } .d4 { animation-delay: 1.2s } .d5 { animation-delay: 1.5s }
+      .flow { stroke-dasharray: 6 10; animation: flow 1.6s linear infinite; }
+      @keyframes flow { to { stroke-dashoffset: -32; } }
+      .blink { animation: blink 1.05s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="380" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="380" rx="22" fill="url(#grid)"/>
+  <rect width="1200" height="380" rx="22" fill="url(#glow)"/>
+
+  <!-- граф коммитов слева -->
+  <g stroke-width="3" fill="none" opacity="0.9">
+    <path d="M70 330 V50" stroke="#0037da"/>
+    <path d="M70 250 C70 220 130 220 130 190 V110 C130 80 70 80 70 60" stroke="#3b78ff" class="flow"/>
+    <path d="M130 170 C130 150 180 150 180 120 V95" stroke="#61d6ff" class="flow"/>
+  </g>
+  <g>
+    <circle cx="70" cy="310" r="7" fill="#3b78ff" class="pulse"/>
+    <circle cx="70" cy="250" r="7" fill="#3b78ff" class="pulse d1"/>
+    <circle cx="130" cy="190" r="7" fill="#61d6ff" class="pulse d2"/>
+    <circle cx="130" cy="140" r="7" fill="#61d6ff" class="pulse d3"/>
+    <circle cx="180" cy="95" r="7" fill="#bedcff" class="pulse d4"/>
+    <circle cx="70" cy="60" r="7" fill="#3b78ff" class="pulse d5"/>
+  </g>
+
+  <!-- граф справа -->
+  <g stroke-width="3" fill="none" opacity="0.9">
+    <path d="M1130 40 V330" stroke="#0037da"/>
+    <path d="M1130 110 C1130 140 1070 140 1070 170 V250 C1070 280 1130 280 1130 300" stroke="#3b78ff" class="flow"/>
+  </g>
+  <circle cx="1130" cy="70" r="7" fill="#3b78ff" class="pulse d2"/>
+  <circle cx="1070" cy="190" r="7" fill="#61d6ff" class="pulse d4"/>
+  <circle cx="1070" cy="240" r="7" fill="#61d6ff" class="pulse d1"/>
+  <circle cx="1130" cy="300" r="7" fill="#bedcff" class="pulse d3"/>
+
+  <!-- заголовок -->
+  <g><animate attributeName="opacity" values="0;1" dur="1.20s" fill="freeze"/>
+    <text x="600" y="190" text-anchor="middle" class="mono" font-size="118" font-weight="800" fill="#3b78ff" opacity="0.55" filter="url(#soft)">GitHelper</text>
+    <text x="600" y="190" text-anchor="middle" class="mono" font-size="118" font-weight="800" fill="url(#title)" letter-spacing="-2">GitHelper</text>
+    <text x="600" y="190" text-anchor="middle" class="mono" font-size="118" font-weight="800" fill="url(#shine)" letter-spacing="-2">GitHelper</text>
+  </g>
+  <text x="600" y="78" text-anchor="middle" class="mono" font-size="17" fill="#61d6ff" letter-spacing="6">◆ COLOR 9 EDITION ◆</text>
+
+  <rect x="300" y="214" width="600" height="2" fill="url(#line)"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.294;1" dur="1.70s" fill="freeze"/></rect>
+
+  <g><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.294;1" dur="1.70s" fill="freeze"/>
+    <text x="600" y="256" text-anchor="middle" class="t" font-size="25" fill="#bedcff">Git и GitHub — без боли. Прямо в консоли.</text>
+    <text x="600" y="290" text-anchor="middle" class="mono" font-size="16" fill="#5f7fc7">коммиты · умный .gitignore · публикация в один клик · защита от утечек<tspan class="blink" fill="#61d6ff"> ▍</tspan></text>
+  </g>
+
+  <!-- плашки -->
+  <g class="mono" font-size="14" font-weight="600">
+    <g transform="translate(398 316)">
+      <rect width="92" height="30" rx="15" fill="#0e225c" stroke="#3b78ff" stroke-opacity="0.6"/>
+      <text x="46" y="20" text-anchor="middle" fill="#bedcff">🦀 Rust</text>
+    </g>
+    <g transform="translate(502 316)">
+      <rect width="110" height="30" rx="15" fill="#0e225c" stroke="#3b78ff" stroke-opacity="0.6"/>
+      <text x="55" y="20" text-anchor="middle" fill="#bedcff">⊞ Windows</text>
+    </g>
+    <g transform="translate(624 316)">
+      <rect width="80" height="30" rx="15" fill="#0e225c" stroke="#3b78ff" stroke-opacity="0.6"/>
+      <text x="40" y="20" text-anchor="middle" fill="#bedcff">MIT</text>
+    </g>
+    <g transform="translate(716 316)">
+      <rect width="86" height="30" rx="15" fill="#103a3a" stroke="#50e6aa" stroke-opacity="0.6"/>
+      <text x="43" y="20" text-anchor="middle" fill="#50e6aa">v1.0.0</text>
+    </g>
+  </g>
+</svg>
